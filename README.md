@@ -26,6 +26,8 @@ php bin/console make:migration
 php bin/console doctrine:migration:migrate
 ```
 
+
+
 ### Author 
 * Benoit Foujols
 * Noa Sillam 
