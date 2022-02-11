@@ -34,6 +34,10 @@ jobs:
         run: composer install
       - name: Creation de la base de donnee
         run: php bin/console doctrine:database:create
+      - name: Creation du fichier migration SQL
+        run: php bin/console make:migration
+      - name: Execution du script SQL
+        run: php bin/console -n doctrine:migrations:migrate
 
 
 
