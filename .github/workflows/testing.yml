@@ -26,8 +26,8 @@ jobs:
         run: php -v
       - name: Test de composer
         run: composer -v
-      - name: Renommer le fichier d'environnement
-        run: mv _.env.exempl .env
+      - name: Renommer le fichier d environnement
+        run: cp _.env.exempl .env
       - name: Installer le vendor
         run: composer install
 
