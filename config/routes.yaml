@@ -1,3 +1,25 @@
-#index:
-#    path: /
-#    controller: App\Controller\DefaultController::index
+api_post_edit:
+    path:       /adminCode/{id}
+    controller: App\Controller\Admin\AdminCodeController
+    methods:    GET|POST
+
+api_post_editEnv:
+    path:       /adminEnv/{id}
+    controller: App\Controller\Admin\AdminEnvController
+    methods:    GET|POST
+
+api_post_editVersion:
+    path:       /adminVersion/{id}
+    controller: App\Controller\Admin\AdminVersionController
+    methods:    GET|POST
+
+api_post_editState:
+    path:       /adminState/{id}
+    controller: App\Controller\Admin\AdminStateController
+    methods:    GET|POST
+
+    
+# api_post_edit:
+#     path:       /api/posts/{id}
+#     controller: App\Controller\BlogApiController::edit
+#     methods:    PUT

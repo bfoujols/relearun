@@ -1,0 +1,59 @@
+{% extends 'admin.html.twig' %}
+
+{% block title %}Gérer les Envs{% endblock %}
+
+{% block body %}
+    <main>
+        <h1  class="text-center text-5xl font-semibold text-indigo-500">Les Envs</h1>
+        <br>
+        <br>
+        <br>
+        
+        
+        <table class="border-collapse border border-slate-500..."  >
+            <thead>
+                <tr>
+                    <th class="border border-slate-600..." width="500px" height="50px">
+                        Nom
+                    </th>
+                    <th class="border border-slate-600..." width="300px" >
+                        Code
+                    </th>
+                    
+                    <th class="border border-slate-600..." width="500px" height="50px">
+                        Action
+                    </th>
+                </tr>
+            </thead>
+            <tbody>
+            {% for env in envs %}
+                
+                <tr>
+                    <td class="border border-slate-700... " width="100px" height="50px">
+                        {{env.name}}
+                    </td>
+                    <td class="border border-slate-700..." width="300px">
+                        {{env.code.name}}
+                    </td>
+                    <td class="border border-slate-700..."> 
+                        <a href="{{path('adminEnv.edit', {id: env.id})}}"  class="px-4 py-1 text-sm text-purple-600 font-semibold rounded-full border border-purple-200 hover:text-white hover:bg-purple-600 hover:border-transparent focus:outline-none focus:ring-2 focus:ring-purple-600 focus:ring-offset-2">Editer</a>
+                        <form method="post" action='{{path('adminEnv.delete', {id: env.id})}}' style="display: inline-block;" onsubmit="return confirm('Etes-vous vraiment sure de vouloir supprimer cette env?')">
+                            <input type='hidden' name='_method' value='DELET'/>
+                            <input type='hidden' name='_token' value='{{csrf_token('delete' ~ env.id)}}'/>
+                            <button class="px-4 py-1 text-sm text-red-600 font-semibold rounded-full border border-red-200 hover:text-white hover:bg-red-600 hover:border-transparent focus:outline-none focus:ring-2 focus:ring-red-600 focus:ring-offset-2">Supprimer</button>
+                        </form>
+                    </td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+        <br>
+        <br>
+        <a href="{{path('adminEnv.new')}}" class="px-10 py-2 text-sm text-purple-600 font-semibold rounded-full border border-purple-200 hover:text-white hover:bg-purple-600 hover:border-transparent focus:outline-none focus:ring-2 focus:ring-purple-600 focus:ring-offset-2" height="50px" style="margin-left: 70%; font-weight: bold;">Ajouter un nouvel Env</a>
+        <!-- Content -->
+    </main>
+    <script src="https://cdn.tailwindcss.com"></script>
+{% endblock %}
+
+
+

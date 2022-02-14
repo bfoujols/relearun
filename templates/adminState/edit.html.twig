@@ -1,0 +1,31 @@
+{% extends 'admin.html.twig' %}
+
+{% block title %}Editer la State{% endblock %}
+
+{% block body %}
+<main width="90%">
+<div width="100%" height="100%" style="text-align: center;"> 
+    <h1  class="text-center text-5xl font-semibold text-indigo-500">Editer la State</h1>
+     <br>
+     
+      <div class="mt-10 max-w-md mx-auto" > 
+     
+    {{form_start(form)}}
+         <div >
+            <div height:"20%">{{form_row (form.name)}} </div>
+            <div class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50 text-center" height:"20%">{{form_row (form.createdDate)}} </div>
+            <div  height:"20%">{{form_row (form.version)}} </div>
+             <div height:"20%">{{form_row (form.env)}} </div>
+        </div>
+    {{form_rest(form)}}
+     <button class="px-4 py-1 text-sm text-purple-600 font-semibold rounded-full border border-purple-200 hover:text-white hover:bg-purple-600 
+     hover:border-transparent focus:outline-none focus:ring-2 focus:ring-purple-600 focus:ring-offset-2" >Sauvegarder</button>
+    {{form_end(form)}}
+    
+      </div>
+ </div>
+    </main>
+    <script src="https://cdn.tailwindcss.com"></script>
+{% endblock %}
+
+

@@ -102,7 +102,7 @@
                                 alt="Ahmed Kamel"
                         />
                         <span class="sr-only">User menu</span>
-                    </button>
+                    </button>  
                     <div
                             x-show="isOpen"
                             @click.away="isOpen = false"
@@ -263,8 +263,8 @@
 
                     <!-- Links -->
                     <div class="py-8 flex-1 px-4 space-y-2 overflow-hidden hover:overflow-auto">
-                        <a href="#" class="flex items-center w-full space-x-2 text-white bg-black rounded-lg">
-                                <span aria-hidden="true" class="p-2 bg-black rounded-lg">
+                        <a href="{{path('home.index')}}" class="flex items-center w-full space-x-2 text-white bg-black rounded-lg">
+                                <span aria-hidden="true" class="p-2 transition-colors rounded-lg group-hover:bg-black group-hover:text-white">
                                     <svg
                                             class="w-6 h-6"
                                             xmlns="http://www.w3.org/2000/svg"
@@ -284,7 +284,7 @@
                         </a>
 
                         <a
-                                href="#"
+                                href="{{path('adminCode.index')}}"
                                 class="flex items-center space-x-2 text-black transition-colors rounded-lg group hover:bg-black hover:text-white"
                         >
                           <span
@@ -306,7 +306,82 @@
                               />
                             </svg>
                           </span>
-                            <span>Pages</span>
+                            <span>Les Codes</span>
+                        </a>
+                        <a
+                                href="{{path('adminEnv.index')}}"
+                                class="flex items-center space-x-2 text-black transition-colors rounded-lg group hover:bg-black hover:text-white"
+                        >
+                          <span
+                                  aria-hidden="true"
+                                  class="p-2 transition-colors rounded-lg group-hover:bg-black group-hover:text-white"
+                          >
+                            <svg
+                                    class="w-6 h-6"
+                                    xmlns="http://www.w3.org/2000/svg"
+                                    fill="none"
+                                    viewBox="0 0 24 24"
+                                    stroke="currentColor"
+                            >
+                              <path
+                                      stroke-linecap="round"
+                                      stroke-linejoin="round"
+                                      stroke-width="2"
+                                      d="M7 21h10a2 2 0 002-2V9.414a1 1 0 00-.293-.707l-5.414-5.414A1 1 0 0012.586 3H7a2 2 0 00-2 2v14a2 2 0 002 2z"
+                              />
+                            </svg>
+                          </span>
+                            <span>Les Envs</span>
+                        </a>
+                        <a
+                                href="{{path('adminState.index')}}"
+                                class="flex items-center space-x-2 text-black transition-colors rounded-lg group hover:bg-black hover:text-white"
+                        >
+                          <span
+                                  aria-hidden="true"
+                                  class="p-2 transition-colors rounded-lg group-hover:bg-black group-hover:text-white"
+                          >
+                            <svg
+                                    class="w-6 h-6"
+                                    xmlns="http://www.w3.org/2000/svg"
+                                    fill="none"
+                                    viewBox="0 0 24 24"
+                                    stroke="currentColor"
+                            >
+                              <path
+                                      stroke-linecap="round"
+                                      stroke-linejoin="round"
+                                      stroke-width="2"
+                                      d="M7 21h10a2 2 0 002-2V9.414a1 1 0 00-.293-.707l-5.414-5.414A1 1 0 0012.586 3H7a2 2 0 00-2 2v14a2 2 0 002 2z"
+                              />
+                            </svg>
+                          </span>
+                            <span>Les States</span>
+                        </a>
+                        <a
+                                href="{{path('adminVersion.index')}}"
+                                class="flex items-center space-x-2 text-black transition-colors rounded-lg group hover:bg-black hover:text-white"
+                        >
+                          <span
+                                  aria-hidden="true"
+                                  class="p-2 transition-colors rounded-lg group-hover:bg-black group-hover:text-white"
+                          >
+                            <svg
+                                    class="w-6 h-6"
+                                    xmlns="http://www.w3.org/2000/svg"
+                                    fill="none"
+                                    viewBox="0 0 24 24"
+                                    stroke="currentColor"
+                            >
+                              <path
+                                      stroke-linecap="round"
+                                      stroke-linejoin="round"
+                                      stroke-width="2"
+                                      d="M7 21h10a2 2 0 002-2V9.414a1 1 0 00-.293-.707l-5.414-5.414A1 1 0 0012.586 3H7a2 2 0 00-2 2v14a2 2 0 002 2z"
+                              />
+                            </svg>
+                          </span>
+                            <span>Les Versions</span>
                         </a>
                     </div>
                     <!-- end Links -->
@@ -506,7 +581,7 @@
                 </div>
             </header>
 
-            <div class="flex flex-1">
+            <div class="flex-1">
                 <!-- Main -->
                 {% block body %}{% endblock %}
             </div>

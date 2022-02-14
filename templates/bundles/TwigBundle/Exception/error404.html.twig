@@ -1,0 +1,42 @@
+{% extends 'admin.html.twig' %}
+
+{% block title %}Page non trouvée {% endblock %}
+{% block body %}
+<main>
+    <h1 class="text-5xl font-bold text-gray-600">Page non trouvée</h1>
+            <br>
+            <br>
+            <br>
+            <div > <p>La page que vous cherchez n'a pas été trouvée</p></div>
+
+             <table class="border-collapse border border-slate-500..."  style="margin-top:5%;">
+            <thead>
+                <tr>
+                    <td class="border border-slate-700..." width="300px" height="50px">
+                        Code de l'erreur:
+                    </td>
+                    <td class="border border-slate-700..." width="300px" >
+                        {{status_code}}
+                        
+                    </td>
+                     </tr>
+                     <tr>
+                    <td class="border border-slate-700..." width="300px" height="50px">
+                        Message de l'erreur:
+                    </td>
+                    <td class="border border-slate-700..." width="300px" >
+                         {{status_text}}
+                    </td>
+                   
+                </tr>
+            </thead>
+          
+        </table>
+            <a href="{{path('home.index')}}" class="px-4 py-1 text-sm text-purple-600 font-semibold rounded-full border border-purple-200 hover:text-white hover:bg-purple-600 hover:border-transparent focus:outline-none focus:ring-2 focus:ring-purple-600 focus:ring-offset-2" width="250px" height="20px" style="margin-left: 60%; font-weight: bold;">RETURN TO HOME</a>
+
+
+       </main>
+             <script src="https://cdn.tailwindcss.com"></script>
+        
+     
+{% endblock %}
